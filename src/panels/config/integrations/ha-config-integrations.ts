@@ -58,6 +58,7 @@ import type {
   HaIntegrationCard,
 } from "./ha-integration-card";
 import { HASSDomEvent } from "../../../common/dom/fire_event";
+import { LocalizeFunc } from "../../../common/translations/localize";
 
 interface DataEntryFlowProgressExtended extends DataEntryFlowProgress {
   localized_title?: string;
@@ -119,7 +120,7 @@ class HaConfigIntegrations extends SubscribeMixin(LitElement) {
         this._deviceRegistryEntries = entries;
       }),
       subscribeConfigFlowInProgress(this.hass, async (flowsInProgress) => {
-        const translationsPromisses: Promise<HomeAssistant>[] = [];
+        const translationsPromisses: Promise<LocalizeFunc>[] = [];
         flowsInProgress.forEach((flow) => {
           // To render title placeholders
           if (flow.context.title_placeholders) {

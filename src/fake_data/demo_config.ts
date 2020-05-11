@@ -18,4 +18,6 @@ export const demoConfig: HassConfig = {
   whitelist_external_dirs: [],
   config_source: "storage",
   safe_mode: false,
+  external_url: "demo.home-assistant.io",
+  internal_url: "demo.home-assistant.io",
 };
